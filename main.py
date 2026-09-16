@@ -4,7 +4,7 @@ import re
 from openai import OpenAI
 from supabase import create_client, Client
 
-# --- Setup ---           
+          
 client = OpenAI( 
     base_url="https://api.groq.com/openai/v1",
     api_key=os.environ["GROQ_API_KEY"],
