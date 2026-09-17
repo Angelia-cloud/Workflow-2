@@ -46,6 +46,15 @@ def process_client_brief(property_name, brief_text, client_id, is_competitor=Fal
     result = call_agent(CLIENT_AGENT_PROMPT, brief_text)
     notes_payload = json.dumps(result)
 
+    # Check if this property already exists for this client
+    existing = (
+        supabase.table("properties")
+        .select("id")
+        .eq("client_id", client_id)
+        .eq("name", property_name)
+        .execute()
+    )
+
     record = {
         "name": property_name,
         "client_id": client_id,
@@ -53,8 +62,14 @@ def process_client_brief(property_name, brief_text, client_id, is_competitor=Fal
         "notes": notes_payload,
     }
 
-    inserted = supabase.table("properties").insert(record).execute()
-    property_id = inserted.data[0]["id"]
+    if existing.data:
+        # Property already exists — update it instead of creating a duplicate
+        property_id = existing.data[0]["id"]
+        supabase.table("properties").update(record).eq("id", property_id).execute()
+    else:
+        # No existing property — create a new one
+        inserted = supabase.table("properties").insert(record).execute()
+        property_id = inserted.data[0]["id"]
 
     return {"property_id": property_id, "extracted": result}
 
@@ -137,8 +152,8 @@ def create_prompts(intents):
 
 if __name__ == "__main__":
     property_data = process_client_brief(
-        "InterContinental Sydney Coogee Beach (TEST RUN)",
-        "InterContinental Sydney Coogee Beach is a 5-star beachfront hotel located directly on Coogee Beach in Sydney. It targets couples, families, and business travellers looking for a luxury coastal stay close to the city. Key attractions include ocean-view rooms, an infinity pool, on-site dining, and proximity to the Bondi to Coogee coastal walk.",
+        "InterContinental Sydney Coogee Beach",
+        "InterContinental Sydney Coogee Beach is a 5star beachfront hotel located directly on Coogee Beach in Sydney. It targets couples, families, and business travellers looking for a luxury coastal stay close to the city. Key attractions include ocean-view rooms, an infinity pool, on-site dining, and proximity to the Bondi to Coogee coastal walk.",
         IC_COOGEE_CLIENT_ID,
         False,
     )
