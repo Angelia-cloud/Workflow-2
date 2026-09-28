@@ -1,0 +1,17 @@
+{
+  "property_name": "InterContinental Sydney Coogee Beach",
+  "location": "242 Arden Street, Coogee NSW 2034 — on Coogee Beach, about 25 minutes from Sydney CBD",
+  "market": "Australia (en-AU)",
+  "checked_on": "2026-09-24",
+  "facts": [
+    {"fact": "198 rooms and suites, most with private balconies and ocean views; Ocean Front, Ocean View, Pool View and Coogee View categories; Pacific, Coastal, Signature and Ocean Front suites; accessible rooms", "source": "https://coogeebeach.intercontinental.com/about"},
+    {"fact": "Dining: Shutters Restaurant & Bar (modern Australian with Mediterranean influences), Rick Stein at Coogee Beach (seafood), The Pool Bar", "source": "https://coogeebeach.intercontinental.com/about"},
+    {"fact": "Èliva Spa: 3 warm magnesium mineral pools, salt sauna, infrared sauna, 2 cold plunge baths, crystal steam room, recovery lounge, couples treatment suite", "source": "https://coogeebeach.intercontinental.com/spa-wellness"},
+    {"fact": "Ocean-view infinity pool, 24/7 gym, two pickleball courts, private beachfront access, Club InterContinental lounge, valet parking", "source": "https://coogeebeach.intercontinental.com/about"},
+    {"fact": "Events: Grand Ballroom up to 260 banquet / 300 theatre; meeting rooms for 32–300; private boardroom; Microhire AV incl. 10-metre LED wall", "source": "https://coogeebeach.intercontinental.com/meetings-events"},
+    {"fact": "Weddings & celebrations spaces: Grand Ballroom, Terrace, Shutters, Leisure Deck, private suite; page names only weddings and 'celebrations' (no birthday, baby shower, bridal shower, anniversary or engagement wording)", "source": "https://coogeebeach.intercontinental.com/weddings-celebrations"},
+    {"fact": "Packages page lists The Experience Package and a Wellness Package (Club InterContinental access, unlimited thermal facilities, valet parking)", "source": "https://coogeebeach.intercontinental.com/packages-and-offers"},
+    {"fact": "Nearby: Bondi-to-Coogee coastal walk, Randwick Racecourse, Allianz Stadium, UNSW", "source": "analyst knowledge — verify"}
+  ],
+  "audiences": ["couples and romance", "celebrations and social events", "families", "wellness travellers", "corporate and bleisure", "food-led travellers", "luxury leisure"]
+}
